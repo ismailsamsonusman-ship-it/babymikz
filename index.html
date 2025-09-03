@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Play It Yourself - Login/Register</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    function showForm(formType) {
+      document.getElementById('loginForm').classList.toggle('hidden', formType !== 'login');
+      document.getElementById('registerForm').classList.toggle('hidden', formType !== 'register');
+
+      document.getElementById('loginTab').classList.toggle('border-b-2', formType === 'login');
+      document.getElementById('registerTab').classList.toggle('border-b-2', formType === 'register');
+    }
+  </script>
+</head>
+<body class="bg-violet-300 flex items-center justify-center min-h-screen">
+
+  <div class="w-full max-w-md bg-white p-6 rounded shadow-md">
+    <div class="flex justify-around mb-6 border-b">
+      <button id="loginTab" onclick="showForm('login')" class="pb-2 font-semibold border-b-2 border-blue-600">Login</button>
+      <button id="registerTab" onclick="showForm('register')" class="pb-2 font-semibold text-gray-500">Register</button>
+    </div>
+
+    <!-- Login Form -->
+    <form id="loginForm">
+      <h1 class="text-xl font-bold text-center mb-4">Login</h1>
+
+      <div class="mb-4">
+        <label for="email" class="block text-sm font-medium text-gray-700">Email:</label>
+        <input type="email" id="email" name="email" required
+               class="mt-1 w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-green-300">
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-sm font-medium text-gray-700">Password:</label>
+        <input type="password" id="password" name="password" required
+               class="mt-1 w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring focus:ring-green-300">
+      </div>
+
+      <button type="submit"
+              class="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 transition">
+        Sign In
+      </button
